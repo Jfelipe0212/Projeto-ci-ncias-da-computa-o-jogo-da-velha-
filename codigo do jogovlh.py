@@ -1,3 +1,4 @@
+#função para criar o tabuleiro
 def print_tabuleiro(tab):
     print()
     for linha in tab:
