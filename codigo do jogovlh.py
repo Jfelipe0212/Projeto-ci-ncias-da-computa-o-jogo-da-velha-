@@ -22,14 +22,16 @@ def checar_empate(tab):
         if " " in linha:
             return False
     return False
-#Criaação do tabuleiro
+
+# Criaação do tabuleiro
 tabuleiro = [[" " for _ in range(3)] for _ in range(3)]
 
 jogador_atual = "X"
 
 while True:
     print_tabuleiro(tabuleiro)
-    #Entrada do jogador
+    
+    # Entrada do jogador
     try:
         linha = int (input(f"jogador {jogador_atual}, escolha a linha (0, 1 ou 2):"))
         coluna = int (input(f"jogador {jogador_atual}, escolha a coluna (0, 1 ou 2)"))
@@ -43,7 +45,7 @@ while True:
         print("Espaço já ocupado. Tente novamente.\n")
         continue
 
-    #Marca a jogada no tabuleiro
+    # Marca a jogada no tabuleiro
     
     tabuleiro[linha][coluna] = jogador_atual
 
