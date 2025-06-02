@@ -21,7 +21,7 @@ def checar_empate(tab):
     for linha in tab:
         if " " in linha:
             return False
-    return False
+    return True 
 
 # Criaação do tabuleiro
 tabuleiro = [[" " for _ in range(3)] for _ in range(3)]
@@ -38,10 +38,10 @@ while True:
     except ValueError :
         print("Entrada inválida . Digite números entra 0 e 2.\n")
         continue
-    if linha not in range(3) or caluna not in range(3):
+    if linha not in range(3) or coluna not in range(3):
         print("Posição inválida. Tente novamente.\n")
         continue
-    if tabuleiro[linha][coluna] != "":
+    if tabuleiro[linha][coluna] !=" ":
         print("Espaço já ocupado. Tente novamente.\n")
         continue
 
