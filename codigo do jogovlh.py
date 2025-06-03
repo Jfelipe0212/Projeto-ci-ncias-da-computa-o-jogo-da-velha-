@@ -23,18 +23,26 @@ def checar_empate(tab):
             return False
     return True 
 
-# Criaação do tabuleiro
+# Pede  no do jogador e se ele X ou O
+nome_jogador_1 = input("Digite o nome do jogador que será X: ")
+nome_jogador_2 = input("Digite o nome do jogador que será O: ")
+
+# Criação do tabuleiro
 tabuleiro = [[" " for _ in range(3)] for _ in range(3)]
 
 jogador_atual = "X"
 
 while True:
     print_tabuleiro(tabuleiro)
+
+ # Define o nome do jogador da vez
+    nome_atual = nome_jogador_1 if jogador_atual == "X" else nome_jogador_2
+
     
     # Entrada do jogador
     try:
-        linha = int (input(f"jogador {jogador_atual}, escolha a linha (0, 1 ou 2):"))
-        coluna = int (input(f"jogador {jogador_atual}, escolha a coluna (0, 1 ou 2)"))
+        linha = int (input(f"{nome_atual}{jogador_atual}, escolha a linha (0, 1 ou 2):"))
+        coluna = int (input(f"{nome_atual} {jogador_atual}, escolha a coluna (0, 1 ou 2)"))
     except ValueError :
         print("Entrada inválida . Digite números entra 0 e 2.\n")
         continue
@@ -53,10 +61,10 @@ while True:
 
     if checar_vitoria(tabuleiro , jogador_atual):
         print_tabuleiro(tabuleiro)
-        print(f"🎉 Jogador {jogador_atual} venceu! 🎉")
+        print(f"🎉 {nome_atual} {jogador_atual} venceu! 🎉")
         break
 
-    # Verificar empa
+    # Verificar empate
 
     if checar_empate(tabuleiro):
         print_tabuleiro(tabuleiro)
